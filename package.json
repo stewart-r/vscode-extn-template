@@ -11,13 +11,13 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:textTools.insertLine"
+        "onCommand:textTools.insertLineAbove"
     ],
     "contributes": {
         "commands":[
             {
                 "title": "Insert Line Above",
-                "command": "textTools.insertLine"
+                "command": "textTools.insertLineAbove"
             }
         ]
     },
