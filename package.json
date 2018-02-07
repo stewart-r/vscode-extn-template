@@ -10,6 +10,17 @@
     "categories": [
         "Other"
     ],
+    "activationEvents": [
+        "onCommand:textTools.insertLine"
+    ],
+    "contributes": {
+        "commands":[
+            {
+                "title": "Insert Line Above",
+                "command": "textTools.insertLine"
+            }
+        ]
+    },
     "main": "./out/extension",
     "scripts": {
         "vscode:prepublish": "npm run compile",
