@@ -1,8 +1,6 @@
-import { expect } from "chai";
-import "mocha";
-import { TextEditor } from "vscode";
+import { TextEditor, TextDocument, TextEditorOptions, ViewColumn } from "vscode";
 
-class mockEditor implements TextEditor{
+export class TextEditorMock implements TextEditor{
     document: TextDocument;
     selection: Selection;
     selections: Selection[];
@@ -26,13 +24,5 @@ class mockEditor implements TextEditor{
     hide(): void {
         throw new Error("Method not implemented.");
     }
-
+    
 }
-
-describe("insertLineAboveImpl", () => {
-    const editor:TextEditor = new mockEditor();
-    describe(`given a valid textEditor`, () => {
-        it('should return an editor with one more line');
-        it('should return an editor with the selection position offset by one');
-    });
-});

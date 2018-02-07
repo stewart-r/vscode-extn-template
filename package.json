@@ -14,7 +14,7 @@
         "onCommand:textTools.insertLineAbove"
     ],
     "contributes": {
-        "commands":[
+        "commands": [
             {
                 "title": "Insert Line Above",
                 "command": "textTools.insertLineAbove"
@@ -25,15 +25,20 @@
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
+        "watch": "tsc-watch -p ./",
+        "watch-tests" : "tsc-watch --onSuccess 'npm run runtests' -p ./ ",
         "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        "runtests": "mocha out/test/**/*.js",
+        "test": "npm run compile && npm run runtests"
     },
     "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
+        "@types/chai": "^4.1.2",
+        "@types/mocha": "^2.2.42",
         "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+        "chai": "^4.1.2",
+        "tsc-watch": "^1.0.16",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6"
     },
     "dependencies": {}
 }

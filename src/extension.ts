@@ -8,7 +8,7 @@ import { insertLineAbove } from './InsertLine/insertLineAbove';
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
     console.log(`text-tools extension activated!`);
-    let insertAboveCommand = vscode.commands.registerTextEditorCommand("textTools.insertLineAbove", insertLineAbove);
+    let insertAboveCommand = vscode.commands.registerCommand("textTools.insertLineAbove", insertLineAbove);
     
     context.subscriptions.push(insertAboveCommand);
 }
